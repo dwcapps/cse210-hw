@@ -7,14 +7,13 @@ class Program
         string playAgain = "Y";
         do{
             Random randomGenerator = new Random();
-            int magicNumber = randomGenerator.Next(1, 100);
+            int magicNumber = randomGenerator.Next(1, 101);
             int userGuess;
             int numOfGuesses = 0;
             do
             {
                 Console.Write("Guess a number! ");
-                string userInputGuess = Console.ReadLine();
-                userGuess = int.Parse(userInputGuess);
+                userGuess = int.Parse(Console.ReadLine());
                 numOfGuesses++;
                 if (userGuess > magicNumber)
                 {
