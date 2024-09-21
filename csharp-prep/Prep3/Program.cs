@@ -27,6 +27,6 @@ class Program
             Console.WriteLine($"You guessed it! It took you {numOfGuesses} guesses.");
             Console.WriteLine("Play again? ");
             playAgain = Console.ReadLine();
-        } while (playAgain == "Y");
+        } while (playAgain.StartsWith("Y", StringComparison.InvariantCultureIgnoreCase));
     }
 }
