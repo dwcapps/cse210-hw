@@ -10,15 +10,15 @@ class Program
         string letter = "Error";
         string sign = "";
 
-        if (percent > 90)
+        if (percent >= 90)
         {
             letter = "A";
         }
-        else if (percent > 80)
+        else if (percent >= 80)
         {
             letter = "B";
         }
-        else if (percent > 70)
+        else if (percent >= 70)
         {
             letter = "C";
         }
