@@ -24,10 +24,18 @@ class Program
         }
         static void DisplayResult(string name, int number)
         {
-            Console.WriteLine($"{name}, the square of your number is {SquareNumber(number)}.");
+            Console.WriteLine($"{name}, the square of your number is {number}.");
         }
-        
+
+        // I don't understand why this is technically preferable to my original solution, isn't it bad practice to create unnecessary variables?
+
         DisplayWelcome();
-        DisplayResult(PromptUserName(), PromptUserNumber());
+
+        string userName = PromptUserName();
+        int userNumber = PromptUserNumber();
+
+        int squaredNumber = SquareNumber(userNumber);
+
+        DisplayResult(userName, squaredNumber);
     }
 }
