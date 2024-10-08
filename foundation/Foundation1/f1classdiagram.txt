@@ -1,0 +1,32 @@
+-------------------------------------------
+
+Program Description:
+The Video class manages video details and a list of Comment objects. 
+It uses AddComment to create and add new comments, while NumOfComments 
+returns the count of comments for that video. The DisplayVideoInfo 
+method outputs video information and iterates through each Comment in 
+the list, calling DisplayComment to show each comment's details.
+
+-------------------------------------------
+
+Video Class
+_title : string
+_author : string
+_length : int
+_comments : List<Comment>
+
+Video(title:string, author:string, length:int)
+NumOfComments() : int
+DisplayVideoInfo() : void
+AddComment(commentAuthor:string, commentText:string) : void
+
+-------------------------------------------
+
+Comment Class
+_text : string
+_author : string
+
+Comment(text:string, author:string)
+DisplayComment() : void
+
+-------------------------------------------
