@@ -14,7 +14,6 @@ shipping location is in the USA by invoking IsInUSA on
 its Address object.
 
 -------------------------------------------
-
 Pruduct Class
 _name : string
 _productId : int
