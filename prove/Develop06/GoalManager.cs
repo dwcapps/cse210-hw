@@ -30,7 +30,7 @@ Which type of goal would you like to create? ";
     public void Start()
     {
         int userMenuSelection = 0;
-        while (userMenuSelection != 6)
+        while (userMenuSelection != 7)
         {
             Console.WriteLine();
             DisplayPlayerInfo();
@@ -164,8 +164,11 @@ Which type of goal would you like to create? ";
             switch (goalType)
             {
                 case "SimpleGoal":
-                    string goalIsComplete = parts[4];
-                    _goals.Add(new SimpleGoal(goalName, goalDescription, goalPoints));
+                    bool goalIsComplete = bool.Parse(parts[4]);
+                    SimpleGoal simpleGoal = new SimpleGoal(goalName, goalDescription, goalPoints);
+                    simpleGoal.SetCompleted(goalIsComplete);
+                    _goals.Add(simpleGoal);
+
                     break;
                 case "EternalGoal":
                     _goals.Add(new EternalGoal(goalName, goalDescription, goalPoints));
@@ -174,9 +177,9 @@ Which type of goal would you like to create? ";
                     int goalAmountCompleted = int.Parse(parts[4]);
                     int goalTarget = int.Parse(parts[5]);
                     int goalBonus = int.Parse(parts[6]);
-                    ChecklistGoal goal = new ChecklistGoal(goalName, goalDescription, goalPoints, goalTarget, goalBonus);
-                    goal.SetAmountCompleted(goalAmountCompleted);
-                    _goals.Add(goal);
+                    ChecklistGoal checklistGoal = new ChecklistGoal(goalName, goalDescription, goalPoints, goalTarget, goalBonus);
+                    checklistGoal.SetAmountCompleted(goalAmountCompleted);
+                    _goals.Add(checklistGoal);
                     break;
             }
         }

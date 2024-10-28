@@ -23,4 +23,9 @@ public class SimpleGoal : Goal
     {
         return $"SimpleGoal·{_shortName}·{_description}·{_points}·{_isComplete}";
     }
+
+    public void SetCompleted(bool completed) // Not in class diagram, but necessary for the GoalManager.LoadGoals() method.
+    {
+        _isComplete = completed;
+    }
 }
